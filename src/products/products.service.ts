@@ -32,6 +32,9 @@ export class ProductsService {
 
   async getSingleProduct(id: string) {
     const product = await this.findProduct(id);
+    if (product === null) {
+      throw new NotFoundException('Could not find product.');
+    }
     return {
       id: product.id,
       title: product.title,
