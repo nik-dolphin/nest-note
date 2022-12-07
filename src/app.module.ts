@@ -9,7 +9,9 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     ProductsModule,
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.MONGOOSE_MODULE_ROOT),
+    MongooseModule.forRoot(
+      'mongodb+srv://nikunj:BCPXYGpwU7Y80F7x@cluster0.bl2o5uf.mongodb.net/nest-note',
+    ),
   ],
   controllers: [AppController],
   providers: [AppService],
